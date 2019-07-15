@@ -848,7 +848,7 @@ class EMBL( object ):
             EMBL.PREVIOUS_VALUES["classification"] = classification
 
             # Take care of procaryote case:  At least one of the following qualifiers "strain, environmental_sample, isolate" must exist when organism belongs to Bacteria.
-            if "Bacteria" in classification:
+            if "Bacteria" or "Archaea" in classification:
 
                 #first check if one of the mandatory data for procayote are given by the command line:
                 if not strain and not environmental_sample and not isolate: #no information provided, let's ask the user
